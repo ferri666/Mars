@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UFT-8">
+        <title>Mars</title>
+        <link >
+    </head>
+    <body>
+        <form action="src/mars.php" method="POST">
+            <p>
+                Width
+            </p>
+            <p>
+            <input type="number" name="width" id="width" required>
+            </p>
+            <p>
+                Height
+            </p>
+            <input type="number" name="height" id="height" required>
+            <p>
+                Initial Position (X)
+            </p>
+            <p>
+            <input type="number" id="posX"name="posX" required>
+            </p>
+            <p>
+                Initial Position (Y)
+            </p>
+            <input type="number" id="posY" name="posY" required>
+            <p>
+                Initial Orientation
+            </p>
+            <select id="orientation" required>
+                <option value="N">North</option>
+                <option value="E">East</option>
+                <option value="S">South</option>
+                <option value="W">West</option>
+            </select>
+            <p>
+                Commands
+            </p>
+            <input type="text" id="commands"name="commands" required>
+            <input type="submit" value="command" required>
+        </form>
+    </body>
+
+
+
+
+
+
+
+
+
+</html>
