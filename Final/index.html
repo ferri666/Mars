@@ -11,26 +11,26 @@
                 Width
             </p>
             <p>
-            <input type="number" name="width" id="width" required>
+            <input type="number" name="width" id="width" min="10" required>
             </p>
             <p>
                 Height
             </p>
-            <input type="number" name="height" id="height" required>
+            <input type="number" name="height" id="height" min="10" required>
             <p>
                 Initial Position (X)
             </p>
             <p>
-            <input type="number" id="posX"name="posX" required>
+            <input type="number" id="posX"name="posX" min="0" required>
             </p>
             <p>
                 Initial Position (Y)
             </p>
-            <input type="number" id="posY" name="posY" required>
+            <input type="number" id="posY" name="posY" min="0" required>
             <p>
                 Initial Orientation
             </p>
-            <select id="orientation" required>
+            <select id="orientation" name="orientation" required>
                 <option value="N">North</option>
                 <option value="E">East</option>
                 <option value="S">South</option>
@@ -39,8 +39,8 @@
             <p>
                 Commands
             </p>
-            <input type="text" id="commands"name="commands" required>
-            <input type="submit" value="command" required>
+            <input type="text" id="commands" name="commands" value="" required>
+            <input type="submit" value="Command" required>
         </form>
     </body>
 

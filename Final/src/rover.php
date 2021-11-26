@@ -4,14 +4,24 @@ class Rover {
     public $posX;
     public $posY;
     public $direction;
+    public $max_width;
+    public $max_height;
 
-    function __construct($x, $y, $d)
+    function __construct($x, $y, $d, $w, $h)
     {
-        $this->posX = $x;
-        $this->posY = $y;
+        
         if ($d!="N"&&$d!="S"&&$d!="W"&&$d!="E"){
             echo("Direction Not Valid");
         } else $this->direction = $d;
+        $this->max_width = $w;
+        $this->max_height = $h;
+        $this->posX = $x;
+        $this->posY = $y;
+    }
+
+    function out_map(){
+        if($this->posX<0||$this->posY<0||$this->posX>$this->max_width||$this->posY>$this->max_height) return true;
+        else return false;
     }
 
     function turn_left() {
@@ -28,6 +38,8 @@ class Rover {
             case "W": 
                  $this->direction = "S";
                  break;
+            default: 
+                break;
         }
     }
 
@@ -45,13 +57,17 @@ class Rover {
             case "E": 
                  $this->direction = "S";
                  break;
+            default: 
+                break;
         }
     }
 
+
+        
     function can_go() {
         switch ($this->direction) {
             case "N": 
-                if($this->posY<$GLOBALS['max_height']) return true;
+                if($this->posY<$this->max_height) return true;
                 else return false;
             case "W":
                 if($this->posX>0) return true;
@@ -60,8 +76,10 @@ class Rover {
                 if($this->posY>0) return true;
                 else return false;
             case "E": 
-                if($this->posX<$GLOBALS['max_width']) return true;
+                if($this->posX<$this->max_width) return true;
                 else return false;
+            default: 
+                break;
         }
     }
 
@@ -78,6 +96,8 @@ class Rover {
                 break;
             case "E": 
                $this->posX++;
+               break;
+            default: 
                break;
         }
     }
